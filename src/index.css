@@ -6,6 +6,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #010511ff;
   overflow: visible;
+  overflow-x: hidden;
 }
 
 :root {
@@ -576,7 +577,7 @@ body {
   body {
     font-size: 14px;
     padding: 10px;
-    overflow: scroll;
+    overflow: visible;
   }
 
   .container {
