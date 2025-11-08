@@ -9,9 +9,7 @@ import { div } from 'three/tsl';
 
 function App() {
   const [count, setCount] = useState(0)
-  useEffect(() => {
-    document.title = "My Awesome Portfolio 🚀";
-  }, []);
+
 
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -42,7 +40,7 @@ function App() {
           handle="Freshman Software Engineering student at IUS | Passionate about coding."
           status=""
           contactText=""
-          avatarUrl="/Ab.png"
+          avatarUrl="/A.png"
           showUserInfo={true}
           enableTilt={true}
           enableMobileTilt={true}
@@ -58,18 +56,19 @@ function App() {
       
       
       {/* Staggered Menu */}
-      <div style={{ height: '100vh', background: '#010511ff' }}>
+      <div style={{ height: '100vh', background: '#010616ff' }}>
         <StaggeredMenu
           position="left"
           items={menuItems}
           socialItems={socialItems}
           displaySocials={true}
           displayItemNumbering={false}
+          logoUrl = "/react.svg"
           menuButtonColor="#ffffffff"
           openMenuButtonColor="#fff"
           changeMenuColorOnOpen={true}
           colors={['#a6f17bff', '#9aff27ff']}
-          logoUrl="src/assets/react.svg"
+          //logoUrl="src/assets/react.svg"
           accentColor="#021a63ff"
           onMenuOpen={() => console.log('Menu opened')}
           onMenuClose={() => console.log('Menu closed')}
