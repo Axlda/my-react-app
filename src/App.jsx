@@ -9,6 +9,9 @@ import { div } from 'three/tsl';
 
 function App() {
   const [count, setCount] = useState(0)
+  useEffect(() => {
+    document.title = "My Awesome Portfolio 🚀";
+  }, []);
 
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -39,7 +42,7 @@ function App() {
           handle="Freshman Software Engineering student at IUS | Passionate about coding."
           status=""
           contactText=""
-          avatarUrl="src/assets/Ab.png"
+          avatarUrl="/Ab.png"
           showUserInfo={true}
           enableTilt={true}
           enableMobileTilt={true}
