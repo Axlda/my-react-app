@@ -571,3 +571,31 @@ body {
   }
 }
 
+/* ========== Mobile Styles (Phones) ========== */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .blog-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
