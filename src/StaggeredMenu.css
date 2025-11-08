@@ -1,5 +1,4 @@
-
-
+/* ✅ Base Styles (unchanged from your code) */
 .staggered-menu-wrapper {
   position: relative;
   width: 100%;
@@ -127,6 +126,7 @@
   display: none !important;
 }
 
+/* ✅ The main panel */
 .staggered-menu-panel {
   position: absolute;
   top: 0;
@@ -141,6 +141,7 @@
   padding: 6em 2em 2em 2em;
   overflow-y: auto;
   z-index: 10;
+  transition: transform 0.4s ease;
 }
 
 [data-position="left"] .staggered-menu-panel {
@@ -148,6 +149,7 @@
   left: 0;
 }
 
+/* ✅ Pre-layers */
 .sm-prelayers {
   position: absolute;
   top: 0;
@@ -163,15 +165,7 @@
   left: 0;
 }
 
-.sm-prelayer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  transform: translateX(0);
-}
-
+/* ✅ Inner content */
 .sm-panel-inner {
   flex: 1;
   display: flex;
@@ -179,6 +173,7 @@
   gap: 1.25rem;
 }
 
+/* ✅ Social Links */
 .sm-socials {
   margin-top: auto;
   padding-top: 2rem;
@@ -205,48 +200,20 @@
   flex-wrap: wrap;
 }
 
-.sm-socials-list .sm-socials-link {
-  opacity: 1;
-}
-
-.sm-socials-list:hover .sm-socials-link {
-  opacity: 0.35;
-}
-
-.sm-socials-list:hover .sm-socials-link:hover {
-  opacity: 1;
-}
-
-.sm-socials-link:focus-visible {
-  outline: 2px solid var(--sm-accent, #ff0000);
-  outline-offset: 3px;
-}
-
-.sm-socials-list:focus-within .sm-socials-link {
-  opacity: 0.35;
-}
-
-.sm-socials-list:focus-within .sm-socials-link:focus-visible {
-  opacity: 1;
-}
-
 .sm-socials-link {
   font-size: 1.2rem;
   font-weight: 500;
   color: #111;
   text-decoration: none;
-  position: relative;
   padding: 2px 0;
-  display: inline-block;
-  transition:
-    color 0.3s ease,
-    opacity 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .sm-socials-link:hover {
   color: var(--sm-accent, #ff0000);
 }
 
+/* ✅ Menu Items */
 .sm-panel-title {
   margin: 0;
   font-size: 1rem;
@@ -265,52 +232,19 @@
 }
 
 .sm-panel-item {
-  position: relative;
   color: #000;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 3.5rem;
   cursor: pointer;
-  line-height: 1;
-  letter-spacing: -2px;
   text-transform: uppercase;
-  transition:
-    background 0.25s,
-    color 0.25s;
-  display: inline-block;
-  text-decoration: none;
-  padding-right: 1.4em;
-}
-
-.staggered-menu-panel .sm-socials-list .sm-socials-link {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.staggered-menu-panel .sm-socials-list:hover .sm-socials-link:not(:hover) {
-  opacity: 0.35;
-}
-
-.staggered-menu-panel
-  .sm-socials-list:focus-within
-  .sm-socials-link:not(:focus-visible) {
-  opacity: 0.35;
-}
-
-.staggered-menu-panel .sm-socials-list .sm-socials-link:hover,
-.staggered-menu-panel .sm-socials-list .sm-socials-link:focus-visible {
-  opacity: 1;
-}
-
-.sm-panel-itemLabel {
-  display: inline-block;
-  will-change: transform;
-  transform-origin: 50% 100%;
+  transition: color 0.25s;
 }
 
 .sm-panel-item:hover {
   color: var(--sm-accent, #5227ff);
 }
 
+/* ✅ Numbered items */
 .sm-panel-list[data-numbering] {
   counter-reset: smItem;
 }
@@ -324,12 +258,14 @@
   font-size: 18px;
   font-weight: 400;
   color: var(--sm-accent, #5227ff);
-  letter-spacing: 0;
-  pointer-events: none;
-  user-select: none;
   opacity: var(--sm-num-opacity, 0);
 }
 
+/* ============================= */
+/* 📱 RESPONSIVE IMPROVEMENTS 📱 */
+/* ============================= */
+
+/* 🧩 Tablets and smaller laptops */
 @media (max-width: 1024px) {
   .staggered-menu-panel {
     width: 100%;
@@ -337,19 +273,63 @@
     right: 0;
   }
 
+  .sm-panel-item {
+    font-size: 2.8rem;
+  }
+
   .staggered-menu-wrapper[data-open] .sm-logo-img {
     filter: invert(100%);
   }
 }
 
+/* 📱 Phones (portrait) */
 @media (max-width: 640px) {
-  .staggered-menu-panel {
-    width: 100%;
-    left: 0;
-    right: 0;
+  .staggered-menu-header {
+    padding: 1.5em;
   }
 
-  .staggered-menu-wrapper[data-open] .sm-logo-img {
-    filter: invert(100%);
+  .sm-logo-img {
+    height: 28px;
+  }
+
+  .sm-toggle {
+    font-size: 0.9rem;
+  }
+
+  .staggered-menu-panel {
+    width: 100%;
+    padding: 5em 1.5em 2em 1.5em;
+  }
+
+  .sm-panel-item {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .sm-socials {
+    gap: 0.5rem;
+  }
+
+  .sm-socials-title {
+    font-size: 0.9rem;
+  }
+
+  .sm-socials-link {
+    font-size: 1rem;
+  }
+}
+
+/* 📱 Extra small screens (below 400px) */
+@media (max-width: 400px) {
+  .sm-panel-item {
+    font-size: 1.6rem;
+  }
+
+  .sm-toggle {
+    gap: 0.2rem;
+  }
+
+  .staggered-menu-header {
+    padding: 1em;
   }
 }
