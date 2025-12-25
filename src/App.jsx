@@ -76,7 +76,7 @@ function App() {
 
       {/* ProfileCard */}
       <div className="absolute inset-0 flex flex-col justify-center items-center">
-        <h1 className="text-white text-6xl mb-10 z-10 font-sans-serif">Abdo's Blog</h1>
+        <h1 className="text-white text-6xl mb-10 z-10 font-sans-serif"></h1>
         <ProfileCard
           name="Abdulkader
             Jalal"
